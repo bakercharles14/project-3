@@ -17,7 +17,7 @@
 
 ### --------------------------------------------------------------------------------------------
 # ERD Image
-<img src="./client/public/ERD-Project-3.png" alt="ERD Image" width="600" height="300">
+<img src="./client/public/Project-3-ERD.png" alt="ERD Image" width="600" height="300">
 
 ### --------------------------------------------------------------------------------------------
 

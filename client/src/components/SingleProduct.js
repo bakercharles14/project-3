@@ -1,17 +1,29 @@
 import React, { Component } from 'react'
 import Products from '../ProductData.js'
+import axios from 'axios'
 
 export default class SingleProduct extends Component {
 
     state = {
-        name: "",
-        image: "",
-        description: "",
-        price: 0
+        singleProduct: {
+            name: "",
+            image: "",
+            description: "",
+            price: 0
+        }
+
     }
 
-    componentDidMount(index) {
-        this.setState(Products[index])
+    componentDidMount() {
+        this.getProductByIndex()
+    }
+
+    getProductByIndex = async () => {
+        const productIndex = this.props.match.params.index
+        const res = await axios.get(`/products/${productIndex}`)
+        const newState = { ...this.state }
+        newState.singleProduct = res.data
+        this.setState(newState)
     }
 
     render() {
@@ -19,7 +31,7 @@ export default class SingleProduct extends Component {
             <div>
                 <div className='product-list'>
                     <div className='product-image'>
-                        <img src={this.props.image} alt={this.props.name} width='270' height='350' />
+                        <img src={this.state.image} alt={this.state.name} width='270' height='350' />
                     </div>
                     <div className='product-item'>
                         <div className='product-name'>

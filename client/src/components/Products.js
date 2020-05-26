@@ -14,18 +14,6 @@ export default class Products extends React.Component {
         this.setState(cart)
     }
 
-
-    // addToCart = async (evt, product) => {
-    //     evt.preventDefault()
-    //     try {
-    //         const newState = await { ...this.state }
-    //         newState.cart.products.push(product.data)
-    //         this.setState(newState)
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    // }
-
     render() {
         return (
             <div>

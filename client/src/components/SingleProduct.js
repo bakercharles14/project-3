@@ -3,10 +3,15 @@ import Products from '../ProductData.js'
 
 export default class SingleProduct extends Component {
 
-    //make state that matches product
+    state = {
+        name: "",
+        image: "",
+        description: "",
+        price: 0
+    }
 
-    componentDidMount() {
-        //get product from productdata array using index.
+    componentDidMount(index) {
+        this.setState(Products[index])
     }
 
     render() {
@@ -19,15 +24,15 @@ export default class SingleProduct extends Component {
                     <div className='product-item'>
                         <div className='product-name'>
                             <strong>Name: </strong>
-                            {this.props.name}
+                            {this.state.name}
                         </div>
                         <div className='product-price'>
                             <strong>Price: </strong>
-                            {this.props.price}
+                            {this.state.price}
                         </div>
                         <div>
                             <strong>Description: </strong>
-                            {this.props.description}
+                            {this.state.description}
                         </div>
                     </div>
                 </div>

@@ -176,6 +176,42 @@
   margin-top: 40px;
 }
 
+.blog-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  font-family: 'Philosopher';
+  color: #5C6CFE;
+}
+
+.all-articles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.new-article {
+  background-color: #5C6CFE;
+  width: 300px;
+  height: 350px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-article-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
 @media (max-width: 700px) {
 
   .top-nav-bar {

@@ -6,6 +6,8 @@ import SingleProduct from './components/SingleProduct.js'
 import Cart from './components/Cart.js'
 import './App.css';
 import { cart } from './CartData.js';
+import Blog from './components/Blog.js';
+import NewBlog from './components/NewBlog.js';
 
 export default class App extends React.Component {
 
@@ -71,6 +73,8 @@ export default class App extends React.Component {
             <Route exact path="/products" component={Products} />
             <Route exact path='/products/:index' component={SingleProduct} />
             <Route exact path="/cart" component={Cart} />
+            <Route exact path='/blog' component={Blog} />
+            <Route exact path='/newblog' component={NewBlog} />
           </Switch>
         </Router>
       </div>

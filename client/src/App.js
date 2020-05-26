@@ -5,8 +5,10 @@ import Products from './components/Products.js'
 import SingleProduct from './components/SingleProduct.js'
 import Cart from './components/Cart.js'
 import './App.css';
+import { cart } from './CartData.js';
 
 export default class App extends React.Component {
+
   render() {
     return (
       <div className="App">
@@ -22,7 +24,7 @@ export default class App extends React.Component {
                 local_grocery_store
               </span>
               <span className='items-in-cart'>
-                0
+                {cart.quantity}
               </span>
             </Link>
           </nav>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Products from './Products.js'
-import { cart, removeItemFromCart } from '../CartData.js'
+import { cart } from '../CartData.js'
 
 export default class Cart extends Component {
 
@@ -17,15 +16,36 @@ export default class Cart extends Component {
     render() {
         return (
             <div>
-                <h1>Items in your Cart</h1>
+                <div className='cart-heading'>
+                    <h1>Items in your Cart</h1>
+                    <div><strong>Total: </strong>${cart.totalPrice}</div>
+                    <div><strong>Total Items: </strong>{cart.quantity}</div>
+                </div>
+
                 {cart.products.map((product, index) => {
-                    return (<div key={`kjdhfslksdfsdh-${index}`}>
-                        <div>{product.name}</div>
-                        <div>{product.description}</div>
-                        <div>{product.price}</div>
-                        <input onClick={() => removeItemFromCart} type='submit' value='Remove Item From Cart' />
+                    return (<div className='cart-item' key={`kjdhfslksdfsdh-${index}`}>
+                        <img src={product.image} alt={product.name} width='60' height='auto' />
+                        <div><strong>Name:</strong> {product.name}</div>
+                        <div><strong>Description:</strong> {product.description}</div>
+                        <div><strong>Price:</strong> ${product.price}</div>
+                        <input onClick={() => {
+                            cart.products.splice(product, 1)
+                            console.log(cart.products)
+                            this.componentDidMount()
+                        }} type='submit' value='Remove Item From Cart' />
                     </div>)
+
                 })}
+                <div className='check-out-input'>
+                    <input type='submit' onClick={() => {
+                        if (window.confirm('Are you ready to check out?')) {
+                            console.log('You checked out')
+                        } else {
+                            console.log('You are not ready to check out yet.')
+                        }
+                    }
+                    } value='Check Out' />
+                </div>
 
             </div>
         )

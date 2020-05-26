@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
+import Products from '../ProductData.js'
 
 export default class SingleProduct extends Component {
+
+    //make state that matches product
+
+    componentDidMount() {
+        //get product from productdata array using index.
+    }
+
     render() {
         return (
             <div>

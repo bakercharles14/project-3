@@ -4,9 +4,10 @@ const cart = {
     quantity: 0
 }
 
-const removeItemFromCart = (product) => {
+const removeItemFromCart = (product, evt) => {
+    evt.preventDefault()
     cart.products.splice(product, 1)
-    return cart.products
+    return cart
 }
 
 export {

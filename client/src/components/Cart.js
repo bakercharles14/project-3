@@ -23,7 +23,7 @@ export default class Cart extends Component {
                         <div>{product.name}</div>
                         <div>{product.description}</div>
                         <div>{product.price}</div>
-                        <input onClick={removeItemFromCart} type='submit' value='Remove Item From Cart' />
+                        <input onClick={() => removeItemFromCart} type='submit' value='Remove Item From Cart' />
                     </div>)
                 })}
 

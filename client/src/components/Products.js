@@ -42,10 +42,8 @@ export default class Products extends React.Component {
                                 <div className='product-description'><strong>Description: </strong>{product.description}</div>
                             </div>
                             <input onClick={() => {
-                                const newState = { ...this.state }
-                                newState.products.push(product)
-                                this.setState(newState)
-                                console.log(this.state.products)
+                                cart.products.push(product)
+                                console.log(cart.products)
                             }} type='submit' value='Add to Cart' />
                         </div>
                     )

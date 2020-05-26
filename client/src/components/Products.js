@@ -29,25 +29,29 @@ export default class Products extends React.Component {
     render() {
         return (
             <div>
-                <h1>Products</h1>
-                {ProductData.map((product, index) => {
-                    return (
-                        <div key={`;sdl;kfhsa;dlkh-${index}`} className='product-item'>
-                            <Link to={`/products/${index}`}>
-                                <img className='product-image' src={product.image} alt={product.name} width='270' height='350' />
-                            </Link>
-                            <div className='product-words'>
-                                <div className='product-name'><strong>Name: </strong>{product.name}</div>
-                                <div><strong>Price: </strong>{product.price}</div>
-                                <div className='product-description'><strong>Description: </strong>{product.description}</div>
+                <h1 className='products-title'>Products</h1>
+                <div className='products-content'>
+                    {ProductData.map((product, index) => {
+                        return (
+                            <div key={`;sdl;kfhsa;dlkh-${index}`} className='product-item'>
+                                <Link to={`/products/${index}`}>
+                                    <img className='product-image' src={product.image} alt={product.name} width='270' height='320' />
+                                </Link>
+                                <div className='product-words'>
+                                    <div className='product-name'><strong>Name: </strong>{product.name}</div>
+                                    <div><strong>Price: </strong>${product.price}</div>
+                                    <div className='product-description'><strong>Description: </strong>{product.description}</div>
+                                </div>
+                                <input onClick={() => {
+                                    cart.products.push(product)
+                                    cart.totalPrice += product.price
+                                    cart.quantity = cart.products.length
+                                    console.log(cart.products)
+                                }} type='submit' value='Add to Cart' />
                             </div>
-                            <input onClick={() => {
-                                cart.products.push(product)
-                                console.log(cart.products)
-                            }} type='submit' value='Add to Cart' />
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </div>
         )
     }

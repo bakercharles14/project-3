@@ -1,14 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Blog extends Component {
-    state = {
-        title: '',
-        content: '',
-        image: ''
-    }
-
-
-
+export default class NewBlog extends Component {
     render() {
         return (
             <div>

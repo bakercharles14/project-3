@@ -66,12 +66,13 @@ export default class Blog extends Component {
                                     type='text'
                                     value={this.state.newBlog.title} />
                             </div>
-                            <div>
+                            <div className='create-article-content'>
                                 <label htmlFor='content'>Content </label>
-                                <input
+                                <textarea
                                     onChange={this.onInputChange}
                                     name='content'
                                     type='text'
+                                    rows='5'
                                     value={this.state.newBlog.content} />
                             </div>
                             <div>

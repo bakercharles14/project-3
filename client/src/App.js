@@ -8,6 +8,7 @@ import './App.css';
 import { cart } from './CartData.js';
 import Blog from './components/Blog.js';
 import NewBlog from './components/NewBlog.js';
+import BlogArticle from './components/BlogArticle.js'
 
 export default class App extends React.Component {
 
@@ -75,6 +76,7 @@ export default class App extends React.Component {
             <Route exact path="/cart" component={Cart} />
             <Route exact path='/blog' component={Blog} />
             <Route exact path='/newblog' component={NewBlog} />
+            <Route exact path='/blogarticle/:articleId' component={BlogArticle} />
           </Switch>
         </Router>
       </div>

@@ -212,6 +212,12 @@
   margin: 20px;
 }
 
+.create-article-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 @media (max-width: 700px) {
 
   .top-nav-bar {

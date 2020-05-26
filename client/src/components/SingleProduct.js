@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Products from '../ProductData.js'
-import axios from 'axios'
+import ProductData from '../ProductData.js'
 
 export default class SingleProduct extends Component {
 
@@ -20,7 +19,7 @@ export default class SingleProduct extends Component {
 
     getProductByIndex = async () => {
         const productIndex = this.props.match.params.index
-        const res = await axios.get(`/products/${productIndex}`)
+        const res = await ProductData[productIndex]
         const newState = { ...this.state }
         newState.singleProduct = res.data
         this.setState(newState)

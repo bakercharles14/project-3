@@ -11,6 +11,7 @@ export default class Cart extends Component {
 
     componentDidMount() {
         this.setState(cart)
+
     }
 
     render() {
@@ -31,6 +32,8 @@ export default class Cart extends Component {
                         <input onClick={() => {
                             cart.products.splice(product, 1)
                             console.log(cart.products)
+                            cart.totalPrice -= product.price
+                            cart.quantity = cart.products.length
                             this.componentDidMount()
                         }} type='submit' value='Remove Item From Cart' />
                     </div>)
@@ -40,6 +43,7 @@ export default class Cart extends Component {
                     <input type='submit' onClick={() => {
                         if (window.confirm('Are you ready to check out?')) {
                             console.log('You checked out')
+
                         } else {
                             console.log('You are not ready to check out yet.')
                         }

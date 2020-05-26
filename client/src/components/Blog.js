@@ -88,7 +88,7 @@ export default class Blog extends Component {
                     {this.state.articles.map((article, index) => {
                         return (
                             <div key={`sldknfas;lkdjf-${index}`}>
-                                <Link to={`/blogarticle/${article._id}`}><img src='{article.image}' height="350" width='300' /></Link>
+                                <Link to={`/blogarticle/${article._id}`}><img src='{article.image}' height="350" width='300' alt={article.content} /></Link>
                                 <div>{article.title}</div>
                                 <div>{article.content}</div>
                                 <button onClick={() => this.onDelete(article._id)}>Delete</button>
